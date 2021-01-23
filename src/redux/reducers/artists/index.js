@@ -7,7 +7,7 @@ const artistsReducer = (state = initialState, action) => {
     case actionTypes.ARTISTS.FETCH_SUCCESS:
       const artists = get(action, 'payload.artists', []);
 
-      return artists ? [...artists] : state;
+      return artists ? [...artists] : [];
     case actionTypes.ARTISTS.FETCH_FAILURE:
     default:
       return state;

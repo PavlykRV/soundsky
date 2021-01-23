@@ -5,14 +5,11 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 
 import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import styles from './ArtistCard.css';
+import styles from './ArtistCard.module.scss';
 
 const ArtistCard = (props) => {
-  const { strArtist, intFormedYear, strArtistThumb, strBiographyEN } =
+  const { strArtist, intFormedYear, strArtistThumb, strGenre, strCountry} =
     props.artist || {};
 
   return (
@@ -20,16 +17,11 @@ const ArtistCard = (props) => {
       <CardHeader
         avatar={
           <Avatar aria-label='recipe' className={styles.avatar}>
-            R
+            {strArtist.substr(0,1)}
           </Avatar>
         }
-        action={
-          <IconButton aria-label='settings'>
-            <MoreVertIcon />
-          </IconButton>
-        }
         title={strArtist}
-        subheader={intFormedYear}
+        subheader={`${intFormedYear} ${strGenre} ${strCountry}`}
       />
       <CardMedia
         className={styles.media}
@@ -38,7 +30,7 @@ const ArtistCard = (props) => {
       />
       <CardContent>
         <Typography variant='body2' color='textSecondary' component='p'>
-          {`${strBiographyEN.substr(0, 200)}...`}
+          
         </Typography>
       </CardContent>
     </Card>

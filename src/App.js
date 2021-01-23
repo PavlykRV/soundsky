@@ -1,15 +1,17 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Homepage from './pages/Home';
-import ArtistPage from './pages/Artist';
+import Artists from './pages/Artists';
+import Artist from './pages/Artist';
+import Header from './shared/Header'
 import './App.css';
 
 function App() {
   return (
     <div className='App'>
+      <Header />
       <Switch>
-        <Route exact path='/' component={Homepage} />
-        <Route path='/:id' component={ArtistPage} />
+        <Route exact path='/' component={Artists} />
+        <Route path='/:id' component={Artist} />
       </Switch>
     </div>
   );
