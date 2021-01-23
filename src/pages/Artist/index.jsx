@@ -8,7 +8,6 @@ import {
   Typography,
   IconButton,
 } from '@material-ui/core';
-import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LanguageIcon from '@material-ui/icons/Language';
