@@ -23,7 +23,6 @@ const Artists = () => {
                 sm={6}
                 md={4}
                 lg={3}
-                justify='center'
               >
                 <Link to={artist.idArtist} className={styles.link}>
                   <ArtistCard artist={artist} />

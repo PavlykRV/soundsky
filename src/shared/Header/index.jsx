@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import get from 'lodash/get';
 import { useHistory } from "react-router-dom";
-// import debounce from 'lodash/debounce'
+import debounce from 'lodash/debounce'
 import { useDispatch } from 'react-redux';
 import {
   AppBar,
@@ -30,7 +30,7 @@ const Header = () => {
     history.push('/');
   };
 
-  // const debouncedSearch = debounce(handleSearch, 500)
+  const debouncedSearch = debounce(handleSearch, 500)
   return (
     <AppBar position='static' className={styles.root}>
       <Toolbar className={styles.toolbar}>
@@ -53,7 +53,7 @@ const Header = () => {
               root: styles.inputRoot,
               input: styles.inputInput,
             }}
-            // onKeyUp={debouncedSearch}
+            onKeyUp={debouncedSearch}
             inputProps={{ 'aria-label': 'search' }}
           />
         </div>

@@ -1,9 +1,12 @@
 import actionTypes from '../../actions/actionTypes';
 import get from 'lodash/get';
+
 const initialState = [];
 
 const artistsReducer = (state = initialState, action) => {
   switch (action.type) {
+    case actionTypes.ARTISTS.DATA_CLEAR:
+      return [];
     case actionTypes.ARTISTS.FETCH_SUCCESS:
       const artists = get(action, 'payload.artists', []);
 
